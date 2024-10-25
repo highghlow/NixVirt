@@ -8,7 +8,7 @@ let
   id = x: x;
 
   typeCheck = tname: test: x:
-    if test x then x else builtins.abort ("NixVirt: expected " + tname + ", found " + builtins.typeOf x);
+    if test x then x else builtins.abort ("NixVirt: expected " + tname + ", found " + builtins.toString x);
 
   typeConvert = tname: test: conv: x: conv (typeCheck tname test x);
 
